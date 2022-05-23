@@ -63,3 +63,5 @@ Use the following command to check if the installation is successful.
 老杨使用了一些YouTuber的教程来完成了repo里的配置文件，shouting thanks to following YouTubers:
 * Tuff Gniuz (majority 大部分)
 * chris@machine (Autopairs)
+
+如何个性化设置快捷键是仁者见仁，智者见智的。按照个人的喜好来设置键位可以让NVim在你的手里更顺手。
