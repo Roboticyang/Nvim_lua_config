@@ -7,54 +7,54 @@
 如果想使用老杨的配置文件，需要比较新的Nim版本，Ubuntu并不会一定现在最近的Stable版本。
 可使用PPA 方法，添加；或者用源文件安装。
 最简单的方法是添加unstable PPA。
-'''ubuntu
+```ubuntu
 sudo add-apt-repository ppa:neovim-ppa/stable (if stable doesn't work for you try unstable)
 sudo apt-get update
 sudo apt-get install neovim
-'''
+```
 
 ### Install lua language on your Linux system (安装lua)
 
-'''ubuntu
+```ubuntu
 sudo apt install luaX.X
-'''
+```
 
 ### Install Packer.nvim for plugins (安装Packer)
-'''ubuntu
+```ubuntu
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-'''
+```
 
 ### Install Nerd font and apply it into your terminal selection (安装nerd font mono)
 
 Download from nerd fonts and create ~/.local/share/fonts folder, copy your font files here (just neater, not neccessary). Run following command, the config your
 terminal.
 
-'''ubuntu
+```ubuntu
 fc-cache -fv
-'''
+```
 
 ### Use nerd font cheat sheet to select your customized symbols. 
 
 ### Install nodejs, and npm for lspconfig language server (安装nodejs, npm需要用来安装language servers)
-'''ubuntu
+```ubuntu
 npm i -g pyright
-'''
+```
 
 ### Use source the lua config files (source 配置文件)
-'''vim shell
+```vim
 :so
-'''
+```
 then run Packer command to install the plugins (运行如下命令更新并安装插件)
-'''vim shell
+```vim
 :PackerSync
-'''
+```
 
 ### Tips worth to mention (值得点出来的一些小细节)
 Use the following command to check if the installation is successful.
-'''vim shell
+```vim
 :checkhealth (with optional package names)
-'''
+```
 
 如果使用中文输入想得到跟VSCode一样的使用体验，尽量使用带有mono的字体。
 
