@@ -13,6 +13,8 @@ vim.g.mapleader = ' '
 
 -- Normal --
 map('n', '<leader>e', ':NvimTreeToggle<CR>', opts) -- <CR> means character return = enter
+map('n', '<leader>sp', ':sp | term<CR>', opts) -- open terminal in horizontal split
+map('n', '<leader>vs', ':vs | term<CR>', opts) -- open terminal in vertical split
 
 map('n', '<C-h>', '<C-w>h', opts)
 map('n', '<C-j>', '<C-w>j', opts)
@@ -46,6 +48,9 @@ map('x', '<A-j>', ":move '>+1<CR>gv-gv", opts)
 map('x', '<A-k>', ":move '<-2<CR>gv-gv", opts)
 map('x', 'J', ":move '>+1<CR>gv-gv", opts)
 map('x', 'K', ":move '<-2<CR>gv-gv", opts)
+
+-- Terminal Mode --
+map('t', '<ESC>', [[<C-\><C-n>]], opts) -- exit the terminal mode to normal mode using ESC
 
 -- barbar keybindings
 -- Move to previous/next
