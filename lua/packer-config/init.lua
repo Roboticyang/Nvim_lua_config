@@ -21,4 +21,7 @@ return require'packer'.startup(function()
 		requires = { {'nvim-lua/plenary.nvim'} }
 		}
 	use 'windwp/nvim-autopairs'
+	use {"akinsho/toggleterm.nvim", config = function()
+			require("toggleterm").setup()
+		end}
 end)
