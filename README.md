@@ -65,3 +65,10 @@ Use the following command to check if the installation is successful.
 * chris@machine (Autopairs)
 
 如何个性化设置快捷键是仁者见仁，智者见智的。按照个人的喜好来设置键位可以让NVim在你的手里更顺手。
+
+### TODO @laoyang
+后续添加
+* python linting, found flake8, syntastic, ale | 完成language server的lint，找到几个插件
+* lua language server | 完成类似pyright的language server配置 - sumneko\_lua，需要这个插件的原因是，做snippets时的语法大部分都是使用的lua，如果想写出高效好用的snippets还是要学一下插件的写法的。有lua的language server会更省心一些。
+* python snippets customization and implementation | 添加个人配置的python snippets
+
