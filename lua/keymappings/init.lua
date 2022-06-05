@@ -13,6 +13,7 @@ vim.g.mapleader = ' '
 
 -- Normal --
 map('n', '<leader>e', ':NvimTreeToggle<CR>', opts) -- <CR> means character return = enter
+map('n', '<leader>q', ':q!<CR>', opts) -- <CR> means character return = enter
 map('n', '<leader>sp', ':sp | term<CR>', opts) -- open terminal in horizontal split
 map('n', '<leader>vs', ':vs | term<CR>', opts) -- open terminal in vertical split
 

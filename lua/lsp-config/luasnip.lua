@@ -17,11 +17,6 @@ ls.config.set_config({
 				virt_text = { { "<- Current Choice", "NonText" } },
 			},
 		},
-		-- [types.insertNode] = {
-		-- 	active = {
-		-- 		virt_text = { { "●", "GruvboxBlue" } },
-		-- 	},
-		-- },
 	},
 }) --}}}
 
@@ -29,23 +24,13 @@ ls.config.set_config({
 
 vim.keymap.set({ "i", "s" }, "<c-s>", "<Esc>:w<cr>")
 
-vim.keymap.set({ "i", "s" }, "<a-p>", function()
+vim.keymap.set({ "i", "s" }, "<c-n>", function()
 	if ls.expand_or_jumpable() then
 		ls.expand()
 	end
 end, { silent = true })
--- vim.keymap.set({ "i", "s" }, "<C-k>", function()
--- 	if ls.expand_or_jumpable() then
--- 		ls.expand_or_jump()
--- 	end
--- end, { silent = true })
--- vim.keymap.set({ "i", "s" }, "<C-j>", function()
--- 	if ls.jumpable() then
--- 		ls.jump(-1)
--- 	end
--- end, { silent = true })
 
-vim.keymap.set({ "i", "s" }, "<A-y>", "<Esc>o", { silent = true })
+vim.keymap.set({ "i", "s" }, "<a-y>", "<Esc>o", { silent = true })
 
 vim.keymap.set({ "i", "s" }, "<a-k>", function()
 	if ls.jumpable(1) then

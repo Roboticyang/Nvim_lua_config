@@ -13,7 +13,7 @@ local rep = require("luasnip.extras").rep
 
 local snippets, autosnippets = {}, {} --}}}
 
-local group = vim.api.nvim_create_augroup("Python Snippets", { clear = true })
+local group = vim.api.nvim_create_augroup("lua Snippets", { clear = true })
 local file_pattern = "*.lua"
 
 local function cs(trigger, nodes, opts) --{{{
@@ -22,6 +22,7 @@ local function cs(trigger, nodes, opts) --{{{
 
 	local pattern = file_pattern
 	local keymaps = {}
+
 	if opts ~= nil then
 		-- check for custom pattern
 		if opts.pattern then
@@ -68,67 +69,9 @@ local function cs(trigger, nodes, opts) --{{{
 end --}}}
 -- Start Refactoring --
 
-local sheBang = s( -- python header snippets {{{
-	"sheBangr",
-	fmt(
-		[[
-#!/usr/bin/{}
-# -*- coding: utf-8 -*-
-"""{}
-	Author: {}
-	Created: {}
-	Modification: {}
-	Version: {}"""
-
-
-{}
-
-
-{}
-	]],
-		{ 
-			c(1, { t("python3"), t("env python") }),
-			i(2, "YourDocStringHere"),
-			i(3, "Yang Wang @ U of Waterloo Maglev lab"),
-			i(4, os.date()),
-			i(5, "Major feature update from previous version"),
-			i(6, "0.0"),
-			i(7, "# Your import goes here"),
-			i(8, "# Your codes goes here"),
-		}
-	)
-) -- }}}
-table.insert(snippets, sheBang)
-
--- local CreateMyClass = s( -- create a MyClass {{{
-cs(
-	{ trig = "cl(%w+)", regTrig = true, hidden = false },
-	fmt(
-		[[
-class {}({}):
-	"""
-	{}
-	"""
-
-	def __init__(self, {}):
-		self.{} = {}
-
-	{}
-		]],
-		{
-			d(1, function(_, snip)
-				return sn(1, i(1, snip.captures[1]))
-			end),
-			c(2, { i(1, "ParentClass"), t("Object"), t("")}),
-			i(3, "DocString"),
-			i(4, "var_name"),
-			rep(4),
-			rep(4),
-			i(7),
-		}
-	)
-) --}}}
-
+local test = s( {trig = "test(%w+)", regTrig = true, hidden = true }, f(function(_, snip) return snip.captures[1] end))
+table.insert(autosnippets, test)
 -- End Refactoring --
+
 
 return snippets, autosnippets
