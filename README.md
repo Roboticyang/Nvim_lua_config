@@ -161,7 +161,7 @@ sudo npm install -g markdownlint-cli
 For lua\_check, install as following: lua
 
 ```ubuntu
-sudo apt install lua_check
+sudo apt install lua-check
 ```
 
 null-ls 是一款用来让nvim可以配置，使用更多ls的插件。非常好上手，值得提出的是
