@@ -19,6 +19,8 @@ sudo apt-get install neovim
 
 ### Install lua language on your Linux system (安装lua)
 
+老杨使用的版本是5.3。
+
 ```ubuntu
 sudo apt install luaX.X
 ```
@@ -50,13 +52,16 @@ fc-cache -fv
 npm i -g pyright
 ```
 
-### Use source the lua config files (source 配置文件)
+### Source the lua config files (source 配置文件)
+
+Run the following line to source the recent updates.
+运行如下命令行，配置刚刚跟新的配置文件，也叫dotfiles.
 
 ```vim
 :so
 ```
 
-then run Packer command to install the plugins (运行如下命令更新并安装插件)
+Then run Packer command to install the plugins (运行如下命令更新并安装插件)
 
 ```vim
 :PackerSync
@@ -86,6 +91,11 @@ Use the following command to check if the installation is successful.
 
 It is pretty standard to follow the lspconfig github server configuration readme
 file. The detailed steps are as following:
+特别值得说的是，lspconfig的阅读文档特别的好，关于配置的详细信息可以参考他的详细说明。
+如果不是老杨使用的features，可以参照文档找到合适的repo来找到知道方向。
+
+老杨在这里提供了安装lua language server的一个方法，具体叫做sumneko\_lua, 是lua的ls。
+会经常使用lua来制作很多code snippets，可以稍微学习下lua是有帮助的。
 
 1. Make sure you have c++17 with your g++. Write a simple cpp file, and comple
 with -std=c++17 to see if it is compatibal with your environment.
@@ -98,6 +108,7 @@ you have added the lua-language-server folder in your $PATH variable.
 sudo apt-get install ninja-build
 ```
 
+这里有一些如果在你的shell rc文档里优雅的添加一些路径到环境变量中。有兴趣的可以尝试一下。
 For adding the path's to your enviroment variable. I spend sometime to found a
 way of doing it neatly. Of course you can use if-then-do-fi as well. Case is
 just for demenstration purposes. And the extra\_path variable/list contains
@@ -118,44 +129,51 @@ done
 Learn some lua coding, we should be able to create snippets with the details
 from YouTuber zionTee113.
 It it really nice to do less typing more coding.
+老杨的很多snippets都是用lua写的，所以定制自己喜欢的snippets的时候需要使用到
+一些lua，不难，但是需要学一些东西，也可以照搬各位大佬的。
 
 ### Linter, finally selected with null-ls
 
+下面是老杨使用的linter，具体是用来对编程的格式优化，会省去不少心力。
+你值得拥有。
 Because of the neat and flourish documentation of the repo. I decided to use
 null-ls as the linter bridge between lsp and neovim. And for my coding
 format requirements. I used black, pylint, lua\_check and markdownlint.
 
-For using black, install as following:
+For using black, install as following: python
 
 ```ubuntu
 pip install black
 ```
 
-For using pyling, install as following:
+For using pylint, install as following: python
 
 ```ubuntu
 sudo apt install pylint
 ```
 
-For using markdownlint-cli, install via npm:
+For using markdownlint-cli, install via npm: markdown
 
 ```ubuntu
 sudo npm install -g markdownlint-cli
 ```
 
-For lua\_check, install as following:
+For lua\_check, install as following: lua
 
 ```ubuntu
 sudo apt install lua_check
 ```
 
-For configuration of null-ls, it is pretty easy, if there is any cutomization
+null-ls 是一款用来让nvim可以配置，使用更多ls的插件。非常好上手，值得提出的是
+它也有特别好的说明文档，如果有什么特别的个人定制需求，可以很简单找到需要的项目。
+For configuration of null-ls, it is pretty easy. If there is any cutomization
 required, please refer to the documentation of null-ls repo. Otherwise follow
 we I did in null-ls-config folder. It will work just fine.
 
 Also it is worth to mention, in lspconfig keymap section. There are a few
 hotkeys you should consider to use frequently. You can also follow the video
 from chris@machin and Tuff Gnuiz. They both have videos on this topic.
+一些非常实用的插件
 
 1. open\_float() - which goes to a float linter prompt
 2. format() - which format the whole script.
