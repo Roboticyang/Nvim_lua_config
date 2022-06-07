@@ -108,6 +108,15 @@ you have added the lua-language-server folder in your $PATH variable.
 sudo apt-get install ninja-build
 ```
 
+If you are using ubuntu 18.04 like me, and my gcc -v version is only 7.5. Althrough
+it supports g++17. But you will meet error when installing sumneko\_lua,
+prompting a filesystem error. I solved this via upgrading my gcc-6 to gcc-9.
+This solves the issue. You can refer to this upgrade online anywhere via use
+ppa: ubuntu-toolchain-r/test.
+
+如果你跟我一样用的是18.04，你的gcc可能在安装sumneko\_lua的时候遇到错误提示不认识filesystem。
+老杨是通过升级到gcc-9来解决的问题，我的虚拟机上安装的是20.04就没有遇到这个问题自带的是gcc-9。
+
 这里有一些如果在你的shell rc文档里优雅的添加一些路径到环境变量中。有兴趣的可以尝试一下。
 For adding the path's to your enviroment variable. I spend sometime to found a
 way of doing it neatly. Of course you can use if-then-do-fi as well. Case is
