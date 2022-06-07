@@ -133,6 +133,18 @@ for p in ${extra_path[*]}; do
 done
 ```
 
+检查你路径添加的是否正确，可以用下面的命令输出：
+
+```ubuntu
+echo $PATH
+```
+
+如果需要删除添加错误的路径，是的这很正常 lol：
+
+```ubuntu
+PATH=`echo $PATH | sed -e 's/:\/home\/wrong\/dir\/$//'`
+```
+
 ### Customized lua snippets for python files
 
 Learn some lua coding, we should be able to create snippets with the details
