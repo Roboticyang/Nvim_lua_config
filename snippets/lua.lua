@@ -67,9 +67,10 @@ local function cs(trigger, nodes, opts) --{{{
 
 	table.insert(target_table, snippet) -- insert snippet into appropriate table
 end --}}}
+
 -- Start Refactoring --
 
-local test = s( {trig = "test(%w+)", regTrig = true, hidden = true }, f(function(_, snip) return snip.captures[1] end))
+local test = s({ trig = "test(%w+)", regTrig = true, hidden = true }, f(function(_, snip) return snip.captures[1] end))
 table.insert(autosnippets, test)
 -- End Refactoring --
 

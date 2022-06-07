@@ -45,15 +45,15 @@ cmp.setup {
     ['<A-o>'] = cmp.mapping.select_prev_item(),
     ['<A-i>'] = cmp.mapping.select_next_item(),
     ['<A-u>'] = cmp.mapping.confirm({ select = true }),
-	
-    ['<C-e>'] = cmp.mapping({ 
+
+    ['<C-e>'] = cmp.mapping({
 		i = cmp.mapping.abort(),
 		c = cmp.mapping.close(),
 	}),
-	
+
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
-	
+
     ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
     ['<CR>'] = cmp.mapping.confirm {
       select = false,
@@ -79,7 +79,7 @@ cmp.setup {
   }),
   -- formatting = {
   --   format = lspkind.cmp_format({
-  --     with_text = true, 
+  --     with_text = true,
   --     maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
 
   --     -- The function below will be called before any actual modifications from lspkind

@@ -1,4 +1,4 @@
-return require'packer'.startup(function()
+return require 'packer'.startup(function()
 	use 'wbthomason/packer.nvim'
 	use 'EdenEast/nightfox.nvim'
 	use 'kyazdani42/nvim-tree.lua'
@@ -18,13 +18,15 @@ return require'packer'.startup(function()
 	use 'nvim-treesitter/nvim-treesitter-refactor' -- refactor based on treesitter
 	use {
 		'nvim-telescope/telescope.nvim',
-		requires = { {'nvim-lua/plenary.nvim'} }
-		}
+		requires = { { 'nvim-lua/plenary.nvim' } }
+	}
 	use 'windwp/nvim-autopairs'
-	use {"akinsho/toggleterm.nvim", config = function()
-			require("toggleterm").setup()
-		end}
-	use {'numToStr/Comment.nvim', config = function()
-			require('Comment').setup()
-		end}
+	use { "akinsho/toggleterm.nvim", config = function()
+		require("toggleterm").setup()
+	end }
+	use { 'numToStr/Comment.nvim', config = function()
+		require('Comment').setup()
+	end }
+
+	use 'jose-elias-alvarez/null-ls.nvim'
 end)

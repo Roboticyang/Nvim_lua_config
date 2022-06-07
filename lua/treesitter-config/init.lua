@@ -6,7 +6,6 @@ require'nvim-treesitter.configs'.setup {
 	},
 
 	sync_install = false,
-	
 	autopairs = {
 		enable = true,
 	},
@@ -17,7 +16,7 @@ require'nvim-treesitter.configs'.setup {
 	refactor = {
 		highlight_definitions = {
 			enable = true,
-			-- clear_on_cursor_move = true,
+			clear_on_cursor_move = true,
 		},
 		smart_rename = {
 			enable = true,

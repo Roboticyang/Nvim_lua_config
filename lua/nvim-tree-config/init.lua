@@ -8,5 +8,5 @@ require'nvim-tree'.setup {
 		  warning = "",
 		  error = "",
 		},
-	},	
+	},
 }

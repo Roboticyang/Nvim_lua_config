@@ -66,9 +66,10 @@ local function cs(trigger, nodes, opts) --{{{
 
 	table.insert(target_table, snippet) -- insert snippet into appropriate table
 end --}}}
+
 -- Start Refactoring --
 
-local sheBang = s( -- python header snippets {{{
+local sheBang = s(-- python header snippets {{{
 	"sheBangr",
 	fmt(
 		[[
@@ -86,7 +87,7 @@ local sheBang = s( -- python header snippets {{{
 
 {}
 	]],
-		{ 
+		{
 			c(1, { t("python3"), t("env python") }),
 			i(2, "YourDocStringHere"),
 			i(3, "Yang Wang @ U of Waterloo Maglev lab"),
@@ -119,7 +120,7 @@ class {}({}):
 			d(1, function(_, snip)
 				return sn(1, i(1, snip.captures[1]))
 			end),
-			c(2, { i(1, "ParentClass"), t("Object"), t("")}),
+			c(2, { i(1, "ParentClass"), t("Object"), t("") }),
 			i(3, "DocString"),
 			i(4, "var_name"),
 			rep(4),
