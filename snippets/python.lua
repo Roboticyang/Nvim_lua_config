@@ -101,9 +101,8 @@ local sheBang = s(-- python header snippets {{{
 ) -- }}}
 table.insert(snippets, sheBang)
 
--- local CreateMyClass = s( -- create a MyClass {{{
-cs(
-	{ trig = "cl(%w+)", regTrig = true, hidden = false },
+cs(-- Create class snippets {{{
+	{ trig = "cl(%w+)", regTrig = true, hidden = true },
 	fmt(
 		[[
 class {}({}):
@@ -128,6 +127,55 @@ class {}({}):
 			i(7),
 		}
 	)
+) --}}}
+
+cs(-- Create Function snippets {{{
+	{ trig = "df([%w_]+)", regTrig = true, hidden = true },
+	fmt(
+		[[
+def {}({}):
+	"""
+	{}
+	"""
+	{}
+
+{}
+		]],
+		{
+			d(1, function(_, snip)
+				return sn(1, i(1, snip.captures[1]))
+			end),
+			c(2, { i(1, "my_arg"), t("") }),
+			i(3, "DocString"),
+			i(4, "pass"),
+			i(5),
+		}
+	)
+) --}}}
+
+cs(-- Create Function in class snippets {{{
+	{ trig = "def([%w_]*)", regTrig = true, hidden = true },
+	fmt(
+		[[
+	def {}(self, {}):
+		"""
+		{}
+		"""
+		{}
+
+	{}
+		]],
+		{
+			d(1, function(_, snip)
+				return sn(1, i(1, snip.captures[1]))
+			end),
+			i(2, "my_var"),
+			i(3, "Docstring"),
+			i(4, "pass"),
+			i(5),
+		}
+	)
+
 ) --}}}
 
 -- End Refactoring --
