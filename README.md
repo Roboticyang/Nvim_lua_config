@@ -6,13 +6,13 @@
 
 ### Install Neovim 0.7+ version (安装Neovim 0.7+ 版本)
 
-如果想使用老杨的配置文件，需要比较新的Nim版本，Ubuntu并不会一定现在最近的Stable版本。
-可使用PPA 方法，添加；或者用源文件安装。
-最简单的方法是添加unstable PPA。
+如果想使用老杨的配置文件，需要比较新的Nim版本，Ubuntu并不会一定默认现在最
+近的Stable版本。可使用PPA 方法，添加或者用源文件安装。
+最简单的方法是添加unstable PPA。当然出现异常是难免的。
 
 ```ubuntu
 sudo add-apt-repository ppa:neovim-ppa/stable
-(if stable doesn't work for you try unstable)
+# if stable doesn't work for you try unstable
 sudo apt-get update
 sudo apt-get install neovim
 ```
@@ -37,6 +37,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 Download from nerd fonts and create ~/.local/share/fonts folder, copy your font
 files here (just neater, not neccessary). Run following command, the config your
 terminal.
+注意最好选择每个英文字符是半个汉字字符长度的字体。
 
 ```ubuntu
 fc-cache -fv
@@ -44,9 +45,11 @@ fc-cache -fv
 
 ### Use nerd font cheat sheet to select your customized symbols
 
+有些特殊字符可以在nerd font cheat sheet里直接复制粘贴。
+
 ### Install nodejs, and npm for lspconfig language server
 
-(安装nodejs, npm需要用来安装language servers)
+(安装nodejs, npm需要用来安装language servers 以及一些其他的依赖)
 
 ```ubuntu
 npm i -g pyright
@@ -55,7 +58,7 @@ npm i -g pyright
 ### Source the lua config files (source 配置文件)
 
 Run the following line to source the recent updates.
-运行如下命令行，配置刚刚跟新的配置文件，也叫dotfiles.
+运行如下命令行，配置刚刚更新的配置文件，也叫dotfiles.
 
 ```vim
 :so
@@ -70,6 +73,7 @@ Then run Packer command to install the plugins (运行如下命令更新并安�
 ### Tips worth to mention (值得点出来的一些小细节)
 
 Use the following command to check if the installation is successful.
+可以用下面的命令来检查插件安装是否成功。
 
 ```vim
 :checkhealth (with optional package names)
@@ -82,20 +86,23 @@ Use the following command to check if the installation is successful.
 老杨使用了一些YouTuber的教程来完成了repo里的配置文件，shouting thanks to following YouTubers:
 
 * Tuff Gniuz (majority 大部分)
-* chris@machine (Autopairs)
-* ziontee113 (Lua Snippets)
+* chris@machine (Autopairs, null-ls)
+* ziontee113 (Lua Snippets, null-ls)
 
 如何个性化设置快捷键是仁者见仁，智者见智的。按照个人的喜好来设置键位可以让NVim在你的手里更顺手。
+看着花里胡哨的不如用得趁手的配置。
 
 ### lua language server
 
 It is pretty standard to follow the lspconfig github server configuration readme
-file. The detailed steps are as following:
+file for any issue you experience or customization you want. The detailed steps
+are as following:
 特别值得说的是，lspconfig的阅读文档特别的好，关于配置的详细信息可以参考他的详细说明。
-如果不是老杨使用的features，可以参照文档找到合适的repo来找到知道方向。
+如果不是老杨使用的features，可以参照文档找到合适的repo来找到知道方向。也有用来
+借鉴如何使用其他插件的套路。找到所在的github repo写好配置文件，很快就能使用了。
 
 老杨在这里提供了安装lua language server的一个方法，具体叫做sumneko\_lua, 是lua的ls。
-会经常使用lua来制作很多code snippets，可以稍微学习下lua是有帮助的。
+因为会经常使用lua来制作很多code snippets，可以稍微学习下lua，安装一个ls是有帮助的。
 
 1. Make sure you have c++17 with your g++. Write a simple cpp file, and comple
 with -std=c++17 to see if it is compatibal with your environment.
@@ -109,16 +116,15 @@ sudo apt-get install ninja-build
 ```
 
 If you are using ubuntu 18.04 like me, and my gcc -v version is only 7.5. Althrough
-it supports g++17. But you will meet error when installing sumneko\_lua,
+it supports g++17. But you might meet error when installing sumneko\_lua like I did,
 prompting a filesystem error. I solved this via upgrading my gcc-6 to gcc-9.
-This solves the issue. You can refer to this upgrade online anywhere via use
-ppa: ubuntu-toolchain-r/test.
+You can refer to this upgrade online anywhere via use ppa: ubuntu-toolchain-r/test.
 
 如果你跟我一样用的是18.04，你的gcc可能在安装sumneko\_lua的时候遇到错误提示不认识filesystem。
 老杨是通过升级到gcc-9来解决的问题，我的虚拟机上安装的是20.04就没有遇到这个问题自带的是gcc-9。
 
-这里有一些如果在你的shell rc文档里优雅的添加一些路径到环境变量中。有兴趣的可以尝试一下。
-For adding the path's to your enviroment variable. I spend sometime to found a
+这里有一些如何在你的shell rc文档里优雅的添加一些路径到环境变量中。有兴趣的可以尝试一下。
+For adding the path's to your environment variable. I spend sometime to found a
 way of doing it neatly. Of course you can use if-then-do-fi as well. Case is
 just for demenstration purposes. And the extra\_path variable/list contains
 all extra path's you want to check in your .bashrc or .zshrc dotfile.
@@ -126,10 +132,10 @@ all extra path's you want to check in your .bashrc or .zshrc dotfile.
 ```shell
 # Useful Functions
 for p in ${extra_path[*]}; do
-	case ":$PATH:" in
-		*:$p:*) ;;
-		*) PATH="${PATH:+${PATH}:}$p" ;;
-	esac;
+    case ":$PATH:" in
+        *:$p:*) ;;
+        *) PATH="${PATH:+${PATH}:}$p" ;;
+    esac;
 done
 ```
 
@@ -189,14 +195,19 @@ null-ls 是一款用来让nvim可以配置，使用更多ls的插件。非常好
 它也有特别好的说明文档，如果有什么特别的个人定制需求，可以很简单找到需要的项目。
 For configuration of null-ls, it is pretty easy. If there is any cutomization
 required, please refer to the documentation of null-ls repo. Otherwise follow
-we I did in null-ls-config folder. It will work just fine.
+what I did in null-ls-config folder. It will work just fine. Assuming you have,
+all the dependencies installed. If you need other linter for different file
+type from my selection. Check the formatting and diagnostics folders for the
+ones you need. Then add to your config file.
 
 Also it is worth to mention, in lspconfig keymap section. There are a few
 hotkeys you should consider to use frequently. You can also follow the video
 from chris@machin and Tuff Gnuiz. They both have videos on this topic.
 一些非常实用的插件
 
-1. open\_float() - which goes to a float linter prompt
-2. format() - which format the whole script.
-3. goto\_next({cannot be nil value}) - go to the next warning/error etc
-4. goto\_prev({cannto be nil value}) - go to the previous warning etc
+1. vim.diagnostic.open\_float() - which goes to a float linter prompt
+2. vim.lsp.buf.format() - which format the whole script.
+3. vim.diagnostic.goto\_next({cannot be nil value}) - go to the next
+warning/error etc
+4. vim.diagnostic.goto\_prev({cannto be nil value}) - go to the previous
+warning/error etc
