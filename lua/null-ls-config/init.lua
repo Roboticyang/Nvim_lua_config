@@ -6,7 +6,7 @@ local diagnostics = null_ls.builtins.diagnostics
 local sources = {
 	formatting.black,
 	formatting.markdownlint,
-	diagnostics.luacheck,
+	-- diagnostics.luacheck,
 	diagnostics.pylint,
 	diagnostics.markdownlint,
 }
