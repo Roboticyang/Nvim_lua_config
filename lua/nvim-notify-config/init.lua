@@ -14,7 +14,7 @@ require 'notify'.setup(
 		render = "minimal",
 		stages = "fade",
 		timeout = 4000,
-		max_width = 30,
+		max_width = 60,
 		max_height = 6,
 		border = "rounded",
 	}

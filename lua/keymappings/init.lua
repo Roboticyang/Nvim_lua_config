@@ -59,7 +59,7 @@ map('n', '<A-,>', ':BufferPrevious<CR>', opts)
 map('n', '<A-.>', ':BufferNext<CR>', opts)
 -- Re-order to previous/next
 map('n', '<A-<>', ':BufferMovePrevious<CR>', opts)
-map('n', '<A->>', ' :BufferMoveNext<CR>', opts)
+map('n', '<A->>', ':BufferMoveNext<CR>', opts)
 -- Goto buffer in position...
 map('n', '<A-1>', ':BufferGoto 1<CR>', opts)
 map('n', '<A-2>', ':BufferGoto 2<CR>', opts)

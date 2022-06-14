@@ -77,8 +77,8 @@ cmp.setup {
       end
     end, { 'i', 's' }),
   }),
-  -- formatting = {
   --   format = lspkind.cmp_format({
+  -- formatting = {
   --     with_text = true,
   --     maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
 
@@ -96,21 +96,21 @@ cmp.setup {
 		vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
 		-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
 		vim_item.menu = ({
-			luasnip = "LuaSnip",
 			nvim_lsp = "[LSP]",
 			nvim_lua = "[NVim Lua]",
-			path = "[Path]",
+			luasnip = "LuaSnip",
 			buffer = "[Buffer]",
+			path = "[Path]",
 		})[entry.source.name]
 		return vim_item
 	end,
   },
   sources = {
-	{ name = 'luasnip' },
-	{ name = 'nvim_lsp', max_item_count = 6 },
+	{ name = 'nvim_lsp' },
 	{ name = 'nvim_lua' },
+	{ name = 'luasnip' },
+	{ name = 'buffer' },
 	{ name = 'path' },
-	{ name = 'buffer', max_item_count = 6 },
   },
   confirm_opts = {
 	  behavior = cmp.ConfirmBehavior.Replace,

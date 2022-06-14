@@ -29,4 +29,5 @@ return require 'packer'.startup(function()
 	end }
 
 	use 'jose-elias-alvarez/null-ls.nvim'
+	use "williamboman/nvim-lsp-installer" -- lsp-installer
 end)
