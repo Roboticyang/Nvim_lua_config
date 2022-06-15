@@ -7,8 +7,8 @@ How to setup the lua config files and installation of some dependencies
 
 * Checkout my videos [at bilibili](https://space.bilibili.com/2915291/)
 * Basic installation and setups: [how to config and install](#how-to-install-and-config)
-* More issues posted here with solutions: [more pratical issue with solutions](#issues-with-solutions)
-* Additional branches for more customized requirements: [Braches brief intro](#additional-branches)
+* More issues posted here with solutions: [more practical issue with solutions](#issues-with-solutions)
+* Additional branches for more customized requirements: [more git branch brief introduction](#additional-branches)
 
 ## How to Install and Config
 
@@ -258,6 +258,8 @@ And for the ls, it can be setup in the dotfiles. The solution has been shown in
 branch.
 
 ## Additional Branches
+
+Please check with the readme document in corresponding branches below.
 
 ### lsp-installer
 
