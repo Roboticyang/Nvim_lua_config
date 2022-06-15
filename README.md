@@ -1,6 +1,16 @@
-# How to setup the lua config files and installation of some dependencies
+# My Dotfiles for Neovim (in lua)
 
-## 如何使用老杨的lua neovim配置文件以及dependencies安装简介
+How to setup the lua config files and installation of some dependencies
+如何使用老杨的lua neovim配置文件以及dependencies安装简介
+
+## Table of content
+
+* Checkout my videos [at bilibili](https://space.bilibili.com/2915291/)
+* Basic installation and setups: [how to config and install](#how-to-install-and-config)
+* More issues posted here with solutions: [more pratical issue with solutions](#issues-with-solutions)
+* Additional branches for more customized requirements: [Braches brief intro](#additional-branches)
+
+## How to Install and Config
 
 ### git clone my repo if you want (克隆老杨的配置repo)
 
@@ -211,3 +221,46 @@ from chris@machin and Tuff Gnuiz. They both have videos on this topic.
 warning/error etc
 4. vim.diagnostic.goto\_prev({cannto be nil value}) - go to the previous
 warning/error etc
+
+## Issues with Solutions
+
+This section will be updated when issues are encountered and solved. Might
+use branches to work on more complex issues, see next section for additional
+branches.
+
+### PackerSync failed to update issue
+
+You might encounter issue that the github plugins are fast-forwarded. This is
+not a good practice, but it will happen eventually. The most dummy-proof way
+to solve this is by uninstall and reinstall the plugin.
+
+1. Go to your packer.nvim dotfile. Comment the plugin use line.
+2. If you have customized setups, comment the setups files as well.
+3. Save and source your dotfiles. Reopen them.
+4. In command line use **PackerClean** to uninstall the plugins you commented.
+5. Revert the comment you just did, and use **PackerSync** again to install them
+back.
+
+Another way to solve this is to setup your packer nvim update with **git rebase**.
+Via doing so, it can solve this problem, but might left pitfalls in future.
+
+### Virtual texts from ls
+
+There are virtual texts from the language servers and are not neat for my own
+taste. I would very much like to disable them. There is a way to do so via using
+[lsp-instller](#lsp-installer). Please check out my bilibili video and git branch.
+
+### Global linter or ls variable not recognized
+
+For linter you can try to use the linter .rc files to add the global variables.
+And for the ls, it can be setup in the dotfiles. The solution has been shown in
+[lsp-installer](#lsp-installer). Please check out my bilibili video and git
+branch.
+
+## Additional Branches
+
+### lsp-installer
+
+This is a branch to show how to install and use lsp-installer plugin. Also a
+workable set of dotfiles is provided. Note the language-servers.lua dotfile
+is migrated into the new dotfile.
