@@ -33,6 +33,10 @@ function _G.custom_fold_text()
 	local s_pos = vim.v.foldstart
 	local e_pos = vim.v.foldend
 	local sta_line = vim.fn.getline(s_pos)
+	local sta_len = string.len(sta_line)
+	if sta_len > 30 then
+		sta_line = string.sub(sta_line, 1, 30)
+	end
 	local end_line = vim.fn.trim(vim.fn.getline(e_pos))
 	local sub = string.gsub(sta_line, '\t', string.rep(' ', vim.o.tabstop))
 	local lnum = e_pos - s_pos + 1
