@@ -43,3 +43,12 @@ you want, it works as a great lsp manager style to make your life easier.
 I have no idea, how the plugins will impact your resources (not sure how much
 burdon will be applied to your system). Please make sure back-up your docfiles
 while working on your customization of your lua setup.
+
+## Expand this work to MacOS
+
+I have successfully migrated this repo to MacOS on iTerm2. It seems all working okay.
+One thing we need to keep in mind is that the keybindings or keymappings should be
+adjusted, due to the different keyboards are used between Mac and Ubuntu.
+
+The outdated functions must be replaced and there are many small details like dependencies,
+and missing packages like npm. Try use checkHealth to work out the whole package.
