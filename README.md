@@ -52,3 +52,5 @@ adjusted, due to the different keyboards are used between Mac and Ubuntu.
 
 The outdated functions must be replaced and there are many small details like dependencies,
 and missing packages like npm. Try use checkHealth to work out the whole package.
+
+## Updated the deprecated codes for barbar
