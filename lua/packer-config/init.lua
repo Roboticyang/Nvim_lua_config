@@ -30,4 +30,6 @@ return require 'packer'.startup(function()
 
 	use 'jose-elias-alvarez/null-ls.nvim'
 	use "williamboman/nvim-lsp-installer" -- lsp-installer
+	
+	use 'lervag/vimtex' -- latex plugin for nvim
 end)

@@ -25,6 +25,7 @@ set.cursorline = true
 
 set.hidden = true
 
+set.shell = "/bin/zsh"
 -- fold settings
 vim.wo.foldmethod = "expr"
 vim.wo.foldexpr = "nvim_treesitter#foldexpr()"

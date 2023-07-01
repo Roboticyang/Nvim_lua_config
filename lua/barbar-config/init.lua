@@ -1,4 +1,3 @@
--- following code deprecated
 -- vim.g.bufferline = {
 --   -- Enable/disable animations
 --   animation = true,
@@ -10,15 +9,11 @@
 --   icon_separator_active = '',
 --   icon_separator_inactive = '',
 -- }
-
--- use following instead
 require'barbar'.setup {
-	animation = true,
-	clickable = true, -- key words updated
 	icons = {
-		separator = {left = ''}, -- this is the active
-		inactive = {
-			separator = {left = ''},
-		},
+		separator = {left = ''},
+		inactive = {separator = {left = ''}},
 	},
+	animation = true,
+	clickable = true,
 }

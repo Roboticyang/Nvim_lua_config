@@ -17,5 +17,9 @@ require('autopairs-config')
 require('toggleterm-config')
 require('comment-config')
 require('null-ls-config')
+
+-- Vimtex is loaded for FileType tex only.
+-- There is conflict with treesitter.
+require('vimtex-config')
 -- -- The following language servers config setup is migrated to lsp-installer
 -- require('lsp-config.language-servers')
