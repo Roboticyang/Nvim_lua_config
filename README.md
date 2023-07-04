@@ -53,52 +53,6 @@ I have no idea, how the plugins will impact your resources (not sure how much
 burdon will be applied to your system). Please make sure back-up your docfiles
 while working on your customization of your lua setup.
 
-## What I have done in the new revision
-
-### Expand this work to macOS
-
-I have successfully migrated this repo to macOS on iTerm2. It seems all working okay.
-One thing we need to keep in mind is that the keybindings or keymappings should be
-adjusted, due to the different keyboards are used between macOS and Ubuntu.
-
-The outdated functions must be replaced and there are many small details like dependencies,
-and missing packages like npm. Try use checkHealth to work out the whole package.
-
-### Updated the deprecated codes for barbar
-
-A minor syntax update. Follow the warning messages.
-
-### Nerd font upgrade
-
-Nerd font recently have been updated majorly. One may need to update the
-installed nerd font or re-install the nerd font. Some of the characters shall be
-updated in your code or dotfiles.
-
-### Editing with LaTeX file updates
-
-I have extended my needs with LaTeX file editing. Therefore, I included more features:
-
-1. I installed Vimtex via Packer.
-2. Then I installed new lsp language server, texlab (which is an equivalent tool
-to vimtex, based on my research). I am still testing out the lsp and plugins.
-3. I tried with ltex_ls, which is not working well with lsp.
-4. Configuration for Vimtex, for reverse search in the pdf file.
-5. Follow the instructions to install tlmgr and basicTex on my macOS
-6. Install the Skim pdf Previewer (which has sync function)
-7. Test the pdf tex file di-search functionality.
-8. Small fix conflict between Vimtex and Tree-sitter by disable TS for tex FileType.
-9. The texlab dotfile can be googled and copied.
-10. tlmgr can be used to install packages in LaTeX environment or formatting and
-diagnostics in null-ls plugins. I used latexindent for formatting, chktex for
-diagnostics.
-11. Link with your overleaf account, things are getting even better!
-12. Based on my research, the entire process for Ubuntu are quite similar, which
-is a good news.
-
-Lastly, there are many steps that I have done for the features above. It took
-me about 3 days to set this environment up. So if you felt that I missed a few steps.
-You are correct. The best thing you could do is to search and try for yourself.
-
 ## Small tips & items for this repo
 
 ### Source the lua config files (source 配置文件)
@@ -296,6 +250,56 @@ lsp-installer. Please check out my bilibili video and git branch.
 
 The lsp-installer branch is finally merged to main.
 
-## develop branch is not deprecated now, ready to remove.
+## What I have done in the new revision
 
-Develop branch is going to be removed.
+### Expand this work to macOS ( Around Feb 2023 )
+
+I have successfully migrated this repo to macOS on iTerm2. It seems all working okay.
+One thing we need to keep in mind is that the keybindings or keymappings should be
+adjusted, due to the different keyboards are used between macOS and Ubuntu.
+
+The outdated functions must be replaced and there are many small details like dependencies,
+and missing packages like npm. Try use checkHealth to work out the whole package.
+
+### Updated the deprecated codes for barbar ( Around March 2023 )
+
+A minor syntax update. Follow the warning messages.
+
+### Nerd font upgrade ( Around March 2023 )
+
+Nerd font recently have been updated majorly. One may need to update the
+installed nerd font or re-install the nerd font. Some of the characters shall be
+updated in your code or dotfiles.
+
+### Editing with LaTeX file updates ( Around June 2023 )
+
+I have extended my needs with LaTeX file editing. Therefore, I included more features:
+
+1. I installed Vimtex via Packer.
+2. Then I installed new lsp language server, texlab (which is an equivalent tool
+to vimtex, based on my research). I am still testing out the lsp and plugins.
+3. I tried with ltex_ls, which is not working well with lsp.
+4. Configuration for Vimtex, for reverse search in the pdf file.
+5. Follow the instructions to install tlmgr and basicTex on my macOS
+6. Install the Skim pdf Previewer (which has sync function)
+7. Test the pdf tex file di-search functionality.
+8. Small fix conflict between Vimtex and Tree-sitter by disable TS for tex FileType.
+9. The texlab dotfile can be googled and copied.
+10. tlmgr can be used to install packages in LaTeX environment or formatting and
+diagnostics in null-ls plugins. I used latexindent for formatting, chktex for
+diagnostics.
+11. Link with your overleaf account, things are getting even better!
+12. Based on my research, the entire process for Ubuntu are quite similar, which
+is a good news.
+
+Lastly, there are many steps that I have done for the features above. It took
+me about 3 days to set this environment up. So if you felt that I missed a few steps.
+You are correct. The best thing you could do is to search and try for yourself.
+
+### Adding the auto-complete for latex ( Around July 2023 )
+
+Follow the help information from Vimtex in nvim:
+
+1. Install using packer, cmp-omni
+2. Update the configuration file for nvim-cmp
+3. Test with latex file.
