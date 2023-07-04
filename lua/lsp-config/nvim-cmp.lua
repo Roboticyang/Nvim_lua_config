@@ -100,6 +100,7 @@ cmp.setup {
 			nvim_lua = "[NVim Lua]",
 			luasnip = "LuaSnip",
 			buffer = "[Buffer]",
+			omni = (vim.inspect(vim_item.menu):gsub('%"', "")),
 			path = "[Path]",
 		})[entry.source.name]
 		return vim_item
@@ -110,6 +111,7 @@ cmp.setup {
 	{ name = 'nvim_lua' },
 	{ name = 'luasnip' },
 	{ name = 'buffer' },
+	{ name = 'omni' },
 	{ name = 'path' },
   },
   confirm_opts = {
