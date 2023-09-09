@@ -303,3 +303,16 @@ Follow the help information from Vimtex in nvim:
 1. Install using packer, cmp-omni
 2. Update the configuration file for nvim-cmp
 3. Test with latex file.
+
+### Added latexfmt model for wrap the latex lines from overleaf
+
+### Remover the lsp-installer ( September 9th, 2023 )
+Since the nvim-lsp-installer is deprecated, use the mason/mason-lspconfig
+instead. A few new setups are required. The mason-lspconfig require further
+modifications:
+
+1. Packer install mason and mason-lspconfig
+2. Config mason-lspconfig, use setup_handlers(table) to setup the lsp
+3. Similarly, try to avoid multiple setup.
+4. Code updates.
+5. Remaining issue, null-ls is not working well for some python modules.

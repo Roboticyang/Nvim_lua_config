@@ -11,13 +11,14 @@ require 'notify'.setup(
 		},
 		level = 2,
 		-- minimum_width = 50,
-		render = "minimal",
-		stages = "fade",
+		render = "default",
+		stages = "fade_in_slide_out",
 		timeout = 4000,
 		max_width = 60,
-		max_height = 6,
+		max_height = 20,
 		border = "rounded",
 	}
 )
 
 vim.notify = require("notify")
+require('telescope').load_extension("notify")

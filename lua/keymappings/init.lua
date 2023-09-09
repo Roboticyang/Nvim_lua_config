@@ -32,6 +32,7 @@ map('n', '<S-s>', ':wq<CR>', opts)
 
 -- This is the vimtex forward search k-map
 map('n', '<leader>gl', ':VimtexView<CR>', opts)
+map('n', '<leader>lf', '<Plug>latexfmt_format', opts)
 
 -- Navigate buffers
 -- map('n', '<S-l>', ':bnext<CR>', opts)

@@ -6,7 +6,7 @@ return require 'packer'.startup(function()
 
 	use 'neovim/nvim-lspconfig'
 	use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
-	use 'hrsh7th/cmp-omni' -- Autocompletion plugin
+	use 'hrsh7th/cmp-omni' -- Autocompletion plugin for latex
 	use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
 	use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
 	use 'L3MON4D3/LuaSnip' -- Snippets plugin
@@ -30,7 +30,12 @@ return require 'packer'.startup(function()
 	end }
 
 	use 'jose-elias-alvarez/null-ls.nvim'
-	use "williamboman/nvim-lsp-installer" -- lsp-installer
-	
+	-- use "williamboman/nvim-lsp-installer" -- lsp-installer is deprecated
+
+	-- use mason
+	use "williamboman/mason.nvim"			-- mason
+	use "williamboman/mason-lspconfig.nvim" -- mason-lspconfig
+
 	use 'lervag/vimtex' -- latex plugin for nvim
+	use 'engeljh/vim-latexfmt' -- latex paragraph formatting
 end)
