@@ -4,10 +4,10 @@ if not status_ok then
 	return
 end
 
-vim.lsp.set_log_level("info")
+vim.lsp.log.set_level(vim.log.levels.INFO)
 
 require("mason-lspconfig").setup({
-	ensure_installed = {},
+	ensure_installed = {"lua_ls", "pyright", "texlab", "clangd"},
 	automatic_installation = false,
 	handlers = nil,
 })

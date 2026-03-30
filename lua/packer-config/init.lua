@@ -15,8 +15,11 @@ return require 'packer'.startup(function()
 	use 'rcarriga/nvim-notify' -- notify neovim message system optional
 	use 'nvim-lualine/lualine.nvim' -- lualine
 	use 'romgrk/barbar.nvim' -- barbar
-	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- treesitter
-	use 'nvim-treesitter/nvim-treesitter-refactor' -- refactor based on treesitter
+	use { 'nvim-treesitter/nvim-treesitter',
+		branch = "main",
+		run = ':TSUpdate', -- treesitter
+		lazy = false}
+	-- use 'nvim-treesitter/nvim-treesitter-refactor' -- refactor based on treesitter, deprecated now.
 	use {
 		'nvim-telescope/telescope.nvim',
 		requires = { { 'nvim-lua/plenary.nvim' } }
@@ -29,7 +32,9 @@ return require 'packer'.startup(function()
 		require('Comment').setup()
 	end }
 
-	use 'jose-elias-alvarez/null-ls.nvim'
+	use 'nvimtools/none-ls.nvim'
+	use 'mfussenegger/nvim-lint'
+	-- use 'jose-elias-alvarez/null-ls.nvim' -- deprecated
 	-- use "williamboman/nvim-lsp-installer" -- lsp-installer is deprecated
 
 	-- use mason

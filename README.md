@@ -316,3 +316,8 @@ modifications:
 3. Similarly, try to avoid multiple setup.
 4. Code updates.
 5. Remaining issue, null-ls is not working well for some python modules.
+
+### New updates for Nvim 0.12 nightly. ( March 30, 2026 )
+Nvim treesitter is deprecated, new updates included.
+Lspconfig is depreciated in require("lspconfig") usage. New updates are
+implemented. 

@@ -7,10 +7,31 @@ M.setup = function()
 		{ name = "DiagnosticSignHint", text = "" },
 		{ name = "DiagnosticSignInfo", text = "" },
 	}
+	-- for _, sign in ipairs(signs) do
+	-- 	vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
+	-- 	-- following is the global batch setup
+	-- 	-- vim.diagnostic.config({signs = {
+	-- 	-- 	texthl = {[sign.txthl] = sign.name},
+	-- 	-- 	text = {[sign.txthl] = sign.text},
+	-- 	-- 	numhl = "" }})
+	-- end
 
-	for _, sign in ipairs(signs) do
-		vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
-	end
+	-- vim.diagnostic.config({signs = {
+	-- 	texthl = {
+	-- 		[vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
+	-- 		[vim.diagnostic.severity.WARN] = "DiagnosticSignWarn",
+	-- 		[vim.diagnostic.severity.HINT] = "DiagnosticSignHint",
+	-- 		[vim.diagnostic.severity.INFO] = "DiagnosticSignInfo",
+	-- 	},
+	-- 	text = {
+	-- 		[vim.diagnostic.severity.ERROR] = "",
+	-- 		[vim.diagnostic.severity.WARN] = "",
+	-- 		[vim.diagnostic.severity.HINT] = "",
+	-- 		[vim.diagnostic.severity.INFO] = "",
+	-- 	},
+	-- 	numhl = "" }
+	-- })
+
 
 	local config = {
 		-- disable virtual text, if you don't like the lines added behind your code use false.
@@ -34,19 +55,19 @@ M.setup = function()
 
 	vim.diagnostic.config(config)
 
-	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-		border = "rounded",
-	})
-
-	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-		border = "rounded",
-	})
+	-- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+	-- 	border = "rounded",
+	-- })
+	--
+	-- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+	-- 	border = "rounded",
+	-- })
 end
 
 local function lsp_highlight_document(client)
 	-- Set autocommands conditional on server_capabilities
 	if client.server_capabilities.document_highlight then
-		vim.api.nvim_exec(
+		vim.api.nvim_exec2(
 			[[
       augroup lsp_document_highlight
         autocmd! * <buffer>

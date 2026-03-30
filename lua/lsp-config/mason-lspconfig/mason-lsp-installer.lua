@@ -1,12 +1,15 @@
 local status_ok, mason_lsp_installer = pcall(require, "mason-lspconfig")
 if not status_ok then
+	vim.notify("Failed to load mason-lspconfig", vim.log.levels.ERROR)
 	return
 end
 
-local status_2_ok, lsp_config = pcall(require, "lspconfig")
-if not status_2_ok then
-	return
-end
+-- This function is deprecated, use vim.lsp.config(...) instead
+-- local status_2_ok, lsp_config = pcall(require, "lspconfig")
+-- if not status_2_ok then
+-- 	return
+-- end
+
 
 local servers = mason_lsp_installer.get_installed_servers()
 
@@ -31,20 +34,28 @@ local function handle_generator(server)
 	opts = vim.tbl_deep_extend("force", tex_lab_opts, opts)
 	end
 
+	if server == "clangd" then
+	local cpp_lab_opts = require("lsp-config.mason-lspconfig.settings.cpp")
+	opts = vim.tbl_deep_extend("force", cpp_lab_opts, opts)
+	end
 	-- This setup() function is exactly the same as lspconfig's setup function.
 	-- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 	return opts
 end
 
-mason_lsp_installer.setup_handlers({
+for _, ser in ipairs(servers) do
+	vim.lsp.config(ser, handle_generator(ser))
+	vim.lsp.enable(ser)
+end
+-- mason_lsp_installer.setup({
 	-- default optional function, 
 	-- function ()
 	--		For some reason, to unpack the loops in default is not working
 	--		For some reason, to run the lspconfig ls setup is not working
 	-- end,
 	-- customized handle in table format, it only works by calling lsp-config here
-	[servers[1]] = lsp_config[servers[1]].setup(handle_generator(servers[1])),
-	[servers[2]] = lsp_config[servers[2]].setup(handle_generator(servers[2])),
-	[servers[3]] = lsp_config[servers[3]].setup(handle_generator(servers[3])),
-})
+	-- [servers[1]] = lsp_config[servers[1]].setup(handle_generator(servers[1])),
+	-- [servers[2]] = lsp_config[servers[2]].setup(handle_generator(servers[2])),
+	-- [servers[3]] = lsp_config[servers[3]].setup(handle_generator(servers[3])),
+-- })
 
