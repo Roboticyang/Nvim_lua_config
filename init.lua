@@ -15,7 +15,8 @@ require('telescope-config')
 require('autopairs-config')
 require('toggleterm-config')
 require('comment-config')
-require('null-ls-config')
+require('none-ls-config')
+require('nvim-lint-config')
 
 -- require('lsp-config.lsp-installer')
 -- Vimtex is loaded for FileType tex only.

@@ -312,7 +312,7 @@ instead. A few new setups are required. The mason-lspconfig require further
 modifications:
 
 1. Packer install mason and mason-lspconfig
-2. Config mason-lspconfig, use setup_handlers(table) to setup the lsp
+2. Config mason-lspconfig, use setup({table}) to setup the lsp
 3. Similarly, try to avoid multiple setup.
 4. Code updates.
 5. Remaining issue, null-ls is not working well for some python modules.
